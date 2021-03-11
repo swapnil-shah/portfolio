@@ -11,10 +11,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.0.0-nightly.625",
+    "@parcel/transformer-sass": "^2.0.0-nightly.625",
     "cross-env": "^7.0.3",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-nightly.623",
     "pug": "^3.0.2",
     "sass": "^1.32.8"
-  }
+  },
+  "dependencies": {}
 }
