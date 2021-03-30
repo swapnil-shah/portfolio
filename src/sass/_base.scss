@@ -1,5 +1,50 @@
 // Contained within this file are all your resets, variables, mixins, and any utility classes.
 
+/*** Variables  ***/
+
+$color-primary: rgb(255, 255, 255);
+$color-secondary: rgb(153, 153, 153);
+
+$bg-primary: rgb(22, 22, 22);
+$bg-secondary: rgb(255, 255, 255);
+
+// $columns: 12;
+
+/*** Resets  ***/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-primary;
+  background-color: $bg-primary;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 96rem;
+  margin: 0 auto;
+}
+// .col {
+//   padding: 1.6rem;
+// }
+
+// @for $width from 1 through $columns {
+//   .col-#{$width} {
+//     flex-basis: $width / $columns * 100%;
+//   }
+// }
+
 /*** Media Queries  ***/
 @mixin for-phone-only {
   @media (max-width: 599px) {

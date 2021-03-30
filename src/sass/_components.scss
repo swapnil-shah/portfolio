@@ -1,8 +1,171 @@
 // Anything reusable such as buttons, navbars, cards etc.
 
-nav {
-  font-size: 12rem;
-  @include for-phone-only {
-    font-size: 1rem;
+/*** Variables  ***/
+header {
+  height: 100vh;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7.5rem;
+  }
+
+  .navbar__main-nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: end;
+  }
+
+  .navbar__main-nav--item {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-primary;
+    padding: 0 1.5rem;
+    color: rgba($color-primary, 0.6);
+    position: relative;
+    transition: all 0.5s;
+
+    &:active,
+    &:hover {
+      color: $color-primary;
+    }
+    &:active::before {
+      content: "";
+      position: absolute;
+      bottom: -0.6rem;
+      background: $color-primary;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 100%;
+      left: calc(50% - 0.25rem);
+    }
+  }
+
+  .active.navbar__main-nav--item {
+    color: $color-primary;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -0.6rem;
+      background: $color-primary;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 100%;
+      left: calc(50% - 0.25rem);
+    }
+  }
+
+  .intro {
+    font-family: "Chivo", "Montserrat", sans-serif;
+    width: 50%;
+    position: absolute;
+    top: 40vh;
+
+    .intro__name {
+      font-weight: 300;
+      letter-spacing: 0.216rem;
+      font-size: 2.4rem;
+      line-height: 4rem;
+      padding-bottom: 1rem;
+    }
+    .intro__tagline {
+      padding-bottom: 2rem;
+    }
+    .intro__tagline h1 {
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      font-size: 6rem;
+      line-height: 6rem;
+    }
+    .intro__description {
+      color: $color-secondary;
+      letter-spacing: 0.058rem;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+  .scroll {
+    bottom: 1rem;
+    box-sizing: border-box;
+    color: $color-primary;
+    height: 6rem;
+    left: 50%;
+    letter-spacing: 0.03;
+    position: absolute;
+    text-align: center;
+    width: 5.4rem;
+    z-index: 0;
+    align-self: stretch;
+    perspective-origin: 2.7rem 3rem;
+    transform: matrix(1, 0, 0, 1, -27, 0);
+    transform-origin: 2.7rem 3rem;
+    border: 0px none $color-primary;
+    margin-top: 3rem;
+    outline: $color-primary none 0px;
+
+    .scroll-animated {
+      box-sizing: border-box;
+      color: $color-primary;
+      height: 3.8rem;
+      letter-spacing: 0.3rem;
+      text-align: center;
+      width: 2.4rem;
+      perspective-origin: 1.2rem 1.9rem;
+      transform-origin: 1.2rem 1.9rem;
+      border: 0.2rem solid $color-primary;
+      border-radius: 1.2rem;
+      margin: 0rem 1.50938rem 0.6rem;
+      outline: $color-primary none 0rem;
+
+      .scroll-animated-inner {
+        box-sizing: border-box;
+        color: $color-primary;
+        display: block;
+        height: 0.5rem;
+        letter-spacing: 0.3rem;
+        text-align: center;
+        width: 0.2rem;
+        z-index: 0;
+        perspective-origin: 0.1rem 0.25rem;
+        transform: matrix(1, 0, 0, 1, 0, 3.67524);
+        transform-origin: 0.1rem 0.25rem;
+        animation: scrollIcon 1s ease 0s infinite alternate none running;
+        background: $color-primary none repeat scroll 0% 0% / auto padding-box border-box;
+        border: 0rem none $color-primary;
+        border-radius: 50%;
+        margin: 0.8rem 0.9rem;
+        outline: $color-primary none 0rem;
+      }
+    }
+
+    .shape-scroll-touch .small-only {
+      box-sizing: border-box;
+      color: $color-primary;
+      display: none;
+      height: 3.8rem;
+      letter-spacing: 0.3rem;
+      text-align: center;
+      width: 3.8rem;
+      perspective-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      border: 0rem none $color-primary;
+      font: normal normal normal normal 1.1rem / 1.1rem brandon-grotesque, sans-serif;
+      margin: 0rem 0rem 0.6rem;
+      outline: $color-primary none 0rem;
+      overflow: hidden;
+    }
+
+    @keyframes scrollIcon {
+      0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      100% {
+        -webkit-transform: translateY(0.6rem);
+        transform: translateY(0.6rem);
+      }
+    }
   }
 }

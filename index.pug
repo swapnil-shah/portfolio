@@ -7,7 +7,28 @@ html(lang="en")
     link(rel="stylesheet", href="./src/sass/main.scss")
     title Swapnil Shah
   body
-    nav
-      li Home
-      li About
-        
+    .wrapper
+      header
+        nav.navbar
+          h1.navbar__logo swa/>nil
+          ul.navbar__main-nav
+            li
+              a.active.navbar__main-nav--item(href="") home
+            li
+              a.navbar__main-nav--item(href="") photography
+            li
+              a.navbar__main-nav--item(href="") timeline
+            li
+              a.navbar__main-nav--item(href="") about
+        .intro
+          h3.intro__name Swapnil Shah
+          .intro__tagline 
+            h1 UI Developer
+            h1 Photographer
+          .intro__description 
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .scroll 
+          .scroll-animated
+            span.scroll-animated-inner
+            svg.shape-scroll-touch.small-only
+              use(xlink:href='#shape-scroll-touch')
