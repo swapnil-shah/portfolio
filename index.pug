@@ -7,19 +7,19 @@ html(lang="en")
     link(rel="stylesheet", href="./src/sass/main.scss")
     title Swapnil Shah
   body
-    .wrapper
+    .container
       header
         nav.navbar
-          h1.navbar__logo swa/>nil
-          ul.navbar__main-nav
+          h1.logo swa/>nil
+          ul.main-nav
             li
-              a.active.navbar__main-nav--item(href="") home
+              a.active.main-nav__link(href="") home
             li
-              a.navbar__main-nav--item(href="") photography
+              a.main-nav__link(href="") photography
             li
-              a.navbar__main-nav--item(href="") timeline
+              a.main-nav__link(href="") timeline
             li
-              a.navbar__main-nav--item(href="") about
+              a.main-nav__link(href="") about
         .intro
           h3.intro__name Swapnil Shah
           .intro__tagline 
@@ -28,7 +28,31 @@ html(lang="en")
           .intro__description 
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         .scroll 
-          .scroll-animated
-            span.scroll-animated-inner
-            svg.shape-scroll-touch.small-only
-              use(xlink:href='#shape-scroll-touch')
+          .scroll__animated
+            span.scroll__animated-inner
+            svg.scroll__touch.small-only
+              use(xlink:href='#scroll__touch')
+      main
+        section.section
+          h3 Featured Project
+          article.featured
+            aside
+              img.featured__image(src="./src/img/preoject_fetaured.png", alt="")
+            aside.featured__content
+              h4 The COVID Tracker
+              p.featured__description As the virus that causes COVID-19 spreads worldwide, this dashboard seeks to offer a one-stop snapshot of confirmed cases globally, with country specific data, news and advisories.
+              div
+                a.section__link(href="#") View Website
+        section.section
+          h3 Few Favorites
+          article.favorites
+            mixin cards(tag, imageSrc,imageAlt, title, description, href)
+              .cards
+                .card
+                  .card__tag(class=(tag.toLowerCase()==='react' && 'teal'))=tag
+                  img.card__image(src=imageSrc, alt=imageSrc)
+                  .card__content
+                    h5.card__title=title
+                    p.card__description=description
+                    a.section__link.card__link(href=href) View on GitHub
+            +cards("Javascript","http://via.placeholder.com/640x360", "image", "Task Tracker", "Hooks are new feature addition in react version 16.8 which allows you to use react features without having to write a class. Hooks don’t work inside classes", "https://placeholder.com/" )
