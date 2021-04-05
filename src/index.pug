@@ -4,7 +4,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="./src/sass/main.scss")
+    link(rel="stylesheet", href="./sass/main.scss")
     title Swapnil Shah
   body
     .container
@@ -37,22 +37,52 @@ html(lang="en")
           h3 Featured Project
           article.featured
             aside
-              img.featured__image(src="./src/img/preoject_fetaured.png", alt="")
+              img.featured__image(src="./img/preoject_fetaured.png", alt="")
             aside.featured__content
               h4 The COVID Tracker
               p.featured__description As the virus that causes COVID-19 spreads worldwide, this dashboard seeks to offer a one-stop snapshot of confirmed cases globally, with country specific data, news and advisories.
               div
-                a.section__link(href="#") View Website
+                a.section__link(href="#", target="_blank") View Website
         section.section
           h3 Few Favorites
           article.favorites
-            mixin cards(tag, imageSrc,imageAlt, title, description, href)
-              .cards
+            .cards
+              mixin cards(tag, imageSrc,imageAlt, title, description, href)
                 .card
                   .card__tag(class=(tag.toLowerCase()==='react' && 'teal'))=tag
                   img.card__image(src=imageSrc, alt=imageSrc)
                   .card__content
                     h5.card__title=title
                     p.card__description=description
-                    a.section__link.card__link(href=href) View on GitHub
-            +cards("Javascript","http://via.placeholder.com/640x360", "image", "Task Tracker", "Hooks are new feature addition in react version 16.8 which allows you to use react features without having to write a class. Hooks don’t work inside classes", "https://placeholder.com/" )
+                    a.section__link.card__link(href=href, target="_blank") View on GitHub
+              each favorite in data.favorites
+                +cards(favorite.tag, favorite.imageSrc,favorite.imageAlt, favorite.title, favorite.description, favorite.href)
+
+    section.section
+      .ribbon
+        .ribbon__text 
+          | SOMETIMES I 
+          span(style="color: #444E86 ") D
+          span(style="color: #955196") E
+          span(style="color: #003F5C") S
+          span(style="color: #DD5182") I
+          span(style="color: #FF6E54") G
+          span(style="color: #FFA600") N 
+          | TOO
+
+    .container
+      main
+        section.section.design
+          img(src="./img/preoject_fetaured.png", alt="")
+          .design__line
+          .design__copy
+            h4 this.location
+            .arrow
+            p Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.
+            a(href="") 
+          img(src="./img/preoject_fetaured.png", alt="")
+    section.section
+      .ribbon
+        .ribbon__text
+
+          

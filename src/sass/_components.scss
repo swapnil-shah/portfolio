@@ -245,7 +245,6 @@ header {
 .cards {
   display: flex;
   width: 100%;
-  padding: 2rem;
   overflow: scroll;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
@@ -265,6 +264,8 @@ header {
     flex: 0 0 2rem;
   }
   .card {
+    display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
     width: 100%;
     max-width: 250px;
@@ -273,6 +274,8 @@ header {
     overflow: hidden;
     border-radius: 1rem;
     padding: 1.6rem;
+    transition: border 1s ease-in-out;
+
     // transform: translateX(400px);
 
     &__tag {
@@ -305,9 +308,9 @@ header {
     }
 
     &__content {
-      padding-bottom: 2rem;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     &__title {
@@ -324,13 +327,95 @@ header {
 
     &__link {
       display: inline-block;
-      align-self: center;
       font-size: 1.2rem;
       line-height: 2rem;
       letter-spacing: 0.072rem;
-      padding-right: 0.5rem;
-      padding-left: 0.5rem;
-      margin-top: 2rem;
+      padding: 1rem 0.5rem 0;
+      margin-top: auto;
+    }
+  }
+}
+
+///////////////////////////////////////
+/// Ribbon
+
+.ribbon {
+  background-color: white;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-size: 6rem;
+    letter-spacing: 2rem;
+    font-weight: 600;
+    color: #161616;
+    max-width: 1500px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+
+///////////////////////////////////////
+/// design
+
+.design {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 250px;
+    object-fit: cover;
+  }
+
+  &__line {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-top: 1px solid black;
+    background: black;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  &__copy {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    align-self: center;
+
+    > * {
+      padding: 1rem;
+    }
+
+    h5 {
+    }
+
+    .arrow {
+      position: relative;
+      height: 1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px dashed #999999;
+        width: 90%;
+      }
+      &::after {
+        content: "\e902";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        @include font-iconmoon;
+        color: #999999;
+      }
+    }
+
+    p {
     }
   }
 }

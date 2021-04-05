@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development parcel index.pug",
+    "dev": "cross-env NODE_ENV=development parcel src/index.pug",
     "build": "cross-env NODE_ENV=production parcel build index.pug"
   },
   "keywords": [],
