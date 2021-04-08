@@ -4,11 +4,39 @@
 
 // $columns: 12;
 :root {
-  --color-primary: rgb(255, 255, 255);
-  --color-primary-60: rgba(255, 255, 255, 0.6);
-  --color-secondary: hsl(0, 0%, 60%);
+  --color-text: rgb(255, 255, 255);
+  --color-background: rgb(14, 20, 27);
+  --color-primary: rgb(87, 115, 255);
+  --color-secondary: rgb(255, 10, 120);
+  --color-tertiary: rgb(255, 225, 0);
+  --color-decorative: rgb(102, 170, 204);
+  --color-muted: rgb(24, 38, 53);
+  --color-muted-background: rgba(24, 38, 53, 0.851);
+  --color-success: rgb(0, 204, 136);
+  --color-success-background: rgba(0, 204, 136, 0.1);
+  --color-error: rgb(250, 56, 121);
+  --color-error-background: rgba(214, 5, 75, 0.1);
+  --color-alert: hsl(30, 100%, 50%);
+  --color-alert-background: rgba(255, 162, 0, 0.1);
+  --color-gray-100: rgb(43, 51, 59);
+  --color-gray-200: rgb(54, 64, 73);
+  --color-gray-300: rgb(92, 102, 112);
+  --color-gray-400: rgb(104, 115, 125);
+  --color-gray-500: rgb(117, 128, 138);
+  --color-gray-600: rgb(126, 140, 154);
+  --color-gray-700: rgb(156, 168, 180);
+  --color-gray-900: rgb(217, 224, 232);
+  --color-gray-1000: rgb(242, 245, 247);
+  --color-subtle-background: rgb(14, 20, 27);
+  --color-subtle-floating: rgb(30, 38, 47);
 
-  --bg-primary: rgb(22, 22, 22);
+  --font-weight-bolder: 700;
+  --font-weight-bold: 500;
+  --font-weight-medium: 400;
+  --font-weight-light: 300;
+  --font-family: "Montserrat", sans-serif;
+  --font-family-mono: "Fira Mono", monospace;
+  --reach-dialog: 1;
 }
 /*** Resets  ***/
 *,
@@ -17,6 +45,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 html {
@@ -24,20 +54,20 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: var(--color-primary);
-  background-color: var(--bg-primary);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 350ms ease 0s, background 350ms ease 0s;
 }
 p {
-  font-style: normal;
-  font-weight: medium;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  letter-spacing: 0.084rem;
-  color: var(--color-secondary);
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+a {
+  margin-top: 1.6rem;
+  display: inline-block;
 }
 // .col {
 //   padding: 1.6rem;

@@ -8,3 +8,15 @@
   font-style: normal;
   font-display: inline-block;
 }
+
+@mixin link-arrows($fontSize) {
+  @include font-iconmoon;
+  content: "\e902\e902\e902";
+  white-space: pre;
+  color: var(--color-primary);
+  font-size: $fontSize;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: all 0.5s;
+  letter-spacing: -0.7rem;
+}
