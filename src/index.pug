@@ -1,23 +1,15 @@
 doctype html
+block config
+  - var activeMenu = '';
+  - var title = 'Swapnil Shah';
+
 html(lang="en")
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="./sass/main.scss")
-    title Swapnil Shah
+    include  /partials/head
   body
     .container
       header
-        nav.navbar
-          h1.logo Swa<span>/></span>nil Shah
-          ul.main-nav
-            li
-              a.active.main-nav__link(href="") Photography
-            li
-              a.main-nav__link(href="") Timeline
-            li
-              a.main-nav__link(href="") About
+        include /partials/nav
         .intro
           .intro__tagline 
             h1 UI Developer
@@ -37,7 +29,7 @@ html(lang="en")
               img.featured__image(src="./img/preoject_fetaured.png", alt="")
             aside.featured__content
               h4 The COVID Tracker
-              p.featured__description As the virus that causes COVID-19 spreads worldwide, this dashboard seeks to offer a one-stop snapshot of confirmed cases globally, with country specific data, news and advisories.
+              p As the virus that causes COVID-19 spreads worldwide, this dashboard seeks to offer a one-stop snapshot of confirmed cases globally, with country specific data, news and advisories.
               div
                 a.section__link(href="#", target="_blank") View Website
         section.section
@@ -117,5 +109,9 @@ html(lang="en")
                 .grid__block
               .grid__layer
                 .grid__block
+
+    include /partials/footer
+    
+
 
           

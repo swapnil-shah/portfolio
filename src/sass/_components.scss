@@ -15,6 +15,8 @@ header {
     .logo {
       font-size: 24px;
       letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--color-text);
 
       span {
         color: var(--color-primary);
@@ -34,6 +36,7 @@ header {
         display: inline-block;
         margin: 0 1.5rem;
         position: relative;
+        text-transform: capitalize;
 
         &::after {
           content: "";
@@ -201,9 +204,6 @@ header {
 
     &__content {
       margin-left: 4rem;
-    }
-
-    &__description {
     }
   }
 
@@ -399,7 +399,7 @@ header {
     width: 70vw;
     height: 60vw;
     // margin: 0 calc(100vw / 20 * 3);
-    position: absolute;
+    // position: absolute;
   }
 
   &__block {
@@ -583,5 +583,47 @@ header {
   100% {
     -webkit-transform: translateY(0.6rem);
     transform: translateY(0.6rem);
+  }
+}
+
+///////////////////////////////////////
+/// Footer
+
+.footer {
+  font-size: 6rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-bolder);
+  padding-top: 10rem;
+
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  a {
+    text-decoration: none;
+    position: relative;
+    margin: 0 1.25rem;
+    color: inherit;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -1rem;
+      border-bottom: 1px dashed var(--color-text);
+      transition: opacity 0.2s ease-out;
+      opacity: 1;
+    }
+
+    &:hover::after {
+      opacity: 0;
+    }
+  }
+
+  &__muted {
+    color: var(--color-gray-700);
   }
 }
