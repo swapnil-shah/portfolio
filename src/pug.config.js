@@ -90,7 +90,8 @@ module.exports = {
           description: "Hooks are new feature addition in react version 16.8 which allows you to use react features without having to write a class. Hooks don’t work inside classes",
           href: "https://placeholder.com/"
         }
-      ]
+      ],
+      brands: ["500px", "behance", "css3", "dribbble", "figma", "flickr", "googlechrome", "html5", "internetexplorer", "javascript", "mozillafirefox", "react", "safari", "sass", "sketch", "stackoverflow"]
     }
   }
 };

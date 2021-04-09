@@ -10,6 +10,9 @@ html(lang="en")
     .container
       header
         include /partials/nav
+        .brands
+          each brand in data.brands
+            span.brands__logo(class="icon-"+ brand)
         .intro
           .intro__tagline 
             h1 UI Developer
@@ -111,7 +114,9 @@ html(lang="en")
                 .grid__block
 
     include /partials/footer
-    
+    script(src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js")
+    script(src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js")
+    script(src= "./scripts/main.js")
 
 
           
