@@ -12,14 +12,34 @@ header {
     align-items: center;
     height: 7rem;
 
-    .logo {
-      font-size: 24px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      color: var(--color-text);
+    .logo-wrapper {
+      position: relative;
+      // display: inline-block;
+      font-size: 2.1rem;
 
-      span {
-        color: var(--color-primary);
+      .logo {
+        font-size: 24px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: var(--color-text);
+        opacity: 0;
+
+        span {
+          color: var(--color-primary);
+        }
+      }
+
+      .logo-bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        transform-origin: 30% 50%;
+        transform: scale(0);
+        background-color: var(--color-primary);
       }
     }
 
@@ -87,14 +107,14 @@ header {
       position: absolute;
       font-size: 2rem;
       color: var(--color-text);
-      opacity: 0.1;
+      opacity: 0.2;
       transform: translatey(0px);
 
-      // @for $i from 1 through 16 {
-      //   &:nth-child(#{$i}) {
-      //     animation: float #{(random(7) / 2) + 5}s ease-in-out infinite #{random(5) / 2}s;
-      //   }
-      // }
+      @for $i from 1 through 16 {
+        &:nth-child(#{$i}) {
+          animation: float #{(random(7) / 2) + 5}s ease-in-out infinite #{random(5) / 2}s;
+        }
+      }
       &:nth-child(1) {
         top: 10%;
         left: 40%;
@@ -165,23 +185,37 @@ header {
   .intro {
     font-family: "Chivo", "Montserrat", sans-serif;
     width: 75%;
-    padding-top: 15rem;
+    position: absolute;
+    top: 40vh;
 
     &__tagline {
       padding-bottom: 2rem;
 
       h1 {
-        font-weight: 500;
         letter-spacing: 0.2rem;
-        font-size: 6.4rem;
-        font-weight: var(--font-weight-bold);
+        font-size: 6rem;
+        font-weight: var(--font-weight-bolder);
         line-height: 7rem;
+        mix-blend-mode: difference;
+        z-index: 10;
+
+        .line {
+          margin-bottom: 0.8px;
+          height: 8rem;
+          position: relative;
+          overflow: hidden;
+
+          span {
+            position: absolute;
+          }
+        }
       }
     }
 
     &__description {
       font-size: 1.6rem;
       line-height: 2.4rem;
+      width: 75%;
     }
   }
 
@@ -189,6 +223,7 @@ header {
     bottom: 1rem;
     box-sizing: border-box;
     color: var(--color-text);
+    opacity: 0.8;
     height: 6rem;
     left: 50%;
     letter-spacing: 0.03;
@@ -720,7 +755,7 @@ header {
     transform: translatey(0px);
   }
   50% {
-    transform: translatey(-20px);
+    transform: translatey(-30px);
   }
   100% {
     transform: translatey(0px);
