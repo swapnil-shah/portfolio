@@ -5,27 +5,24 @@ function init() {
 
     }
   });
-  let headers = document.querySelectorAll("section h3")
 
-  tl
-    .to(".logo-bg", {
-      scale: 1,
-      duration: 0.3
-    })
-    .to(".logo", {
-      opacity: 1, duration: .7, delay: .5
-    })
-    .to(".logo-bg", {
-      scale: 0, duration: .7
-    }, "-=.5")
+  tl.from([".logo", ".main-nav"], {
+    y: 16,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.inOut",
+    stagger: {
+      amount: 0.1
+    }
+  })
     .from(".intro__tagline .line span", {
       y: 80,
       duration: 1.2,
-      ease: "power4.out",
+      ease: "power3.out",
       stagger: {
         amount: 0.3
       }
-    }, "-=.5").from(".intro__description", {
+    }).from(".intro__description", {
       y: 40,
       duration: 2,
       opacity: 0,
@@ -33,21 +30,15 @@ function init() {
       stagger: {
         amount: 1
       }
-    }, "-=.2").from(".brands", {
-      y: -20,
+    }, "-=.5").from(".brands", {
+      y: -40,
       duration: 2,
       opacity: 0,
       ease: "power3.out"
-    }, "-=1").from(".main-nav", {
-      y: -16,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power0.inOut"
-    }, "-=.8").from(".scroll", {
-      delay: 0,
+    }, "-=1").from(".scroll", {
       opacity: 0,
       ease: "power0.out",
-    }, "-=1")
+    }, "-=.5")
 
 
   gsap.to(".brands__logo", {
@@ -82,7 +73,7 @@ function init() {
       },
       scrollTrigger: {
         trigger: section,
-        start: "center 70%"
+        start: "center bottom"
       }
     });
   });
@@ -98,7 +89,7 @@ function init() {
     },
     scrollTrigger: {
       trigger: ".featured",
-      start: "center 70%",
+      start: "center bottom",
     }
   });
 
@@ -106,14 +97,14 @@ function init() {
     delay: -0.4,
     opacity: 0,
     y: 40,
-    duration: 0.6,
+    duration: 1,
     ease: "power3.out",
     stagger: {
       amount: 0.4
     },
     scrollTrigger: {
       trigger: ".favorites",
-      start: "center 70%"
+      start: "center bottom"
     }
   });
 
@@ -129,8 +120,20 @@ function init() {
     },
     scrollTrigger: {
       trigger: ".design",
-      start: "center 70%"
+      start: "center bottom"
     }
+  });
+
+  gsap.utils.toArray('.ribbon').forEach((section, index) => {
+    const w = section.querySelector('.ribbon__text');
+    const [x, xEnd] = (index % 2) ? ['100%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+    gsap.fromTo(w, { x }, {
+      x: xEnd + 100,
+      scrollTrigger: {
+        trigger: section,
+        scrub: 0.5
+      }
+    });
   });
 }
 

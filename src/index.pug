@@ -51,17 +51,16 @@ html(lang="en")
               each favorite in data.favorites
                 +cards(favorite.tag, favorite.imageSrc,favorite.imageAlt, favorite.title, favorite.description, favorite.href)
 
-    section.section
-      .ribbon
-        .ribbon__text 
-          | SOMETIMES I 
-          span(style="color: #444E86 ") D
-          span(style="color: #955196") E
-          span(style="color: #003F5C") S
-          span(style="color: #DD5182") I
-          span(style="color: #FF6E54") G
-          span(style="color: #FFA600") N 
-          | TOO
+    section.section.ribbon
+      .ribbon__text 
+        | SOMETIMES I 
+        span(style="color: #444E86 ") D
+        span(style="color: #955196") E
+        span(style="color: #003F5C") S
+        span(style="color: #DD5182") I
+        span(style="color: #FF6E54") G
+        span(style="color: #FFA600") N 
+        | TOO
 
     .container
       main
@@ -83,36 +82,35 @@ html(lang="en")
               p Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.
               a.section__link(href="#", target="_blank") View Website
 
-    section.section
-      .ribbon
-        .ribbon__text A Particle more about me
+    section.section.ribbon
+      .ribbon__text A Particle more about me
 
-    .container
-      main
-        section.section
-          .grid
-            .grid__container
-              .grid__layer
-                .grid__block
-                  h4 Photography App
-                  p Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.
-                  a.section__link(href="#", target="_blank") View Website
-              .grid__layer
-                .grid__block
-              .grid__layer
-                .grid__block
-              .grid__layer.centerPiece
-                .grid__block.centerBlock
-              .grid__layer
-                .grid__block
-              .grid__layer
-                .grid__block
-              .grid__layer
-                .grid__block
-              .grid__layer
-                .grid__block
-              .grid__layer
-                .grid__block
+    //- .container
+    //-   main
+    //-     section.section
+    //-       .grid
+    //-         .grid__container
+    //-           .grid__layer
+    //-             .grid__block
+    //-               h4 Photography App
+    //-               p Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.
+    //-               a.section__link(href="#", target="_blank") View Website
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer.centerPiece
+    //-             .grid__block.centerBlock
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer
+    //-             .grid__block
+    //-           .grid__layer
+    //-             .grid__block
 
     include /partials/footer
     script(src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js")

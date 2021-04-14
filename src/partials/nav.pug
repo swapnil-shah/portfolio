@@ -2,16 +2,13 @@ block link
   -var selected = '/'; //default
   -var menu = { 'photography': '/photography', 'timeline': '/timeline', 'about': '/about' };
 
-nav.navbar
-  h1
-    span.logo-wrapper
-      span.logo(href="/") Swa<span>/></span>nil Shah
-      span.logo-bg
-      
-  ul.main-nav
-    each val, key in menu
-      li
-        if activeMenu === key
-          a.active.main-nav__link(href=val, title = key)=key
-        else
-          a.main-nav__link(href=val, title = key)=key
+  nav.navbar
+    h1
+      a.logo(href="/") Swa<span>/></span>nil Shah
+    ul.main-nav
+      each val, key in menu
+        li
+          if activeMenu === key
+            a.active.main-nav__link(href=val, title = key)=key
+          else
+            a.main-nav__link(href=val, title = key)=key
