@@ -124,17 +124,46 @@ function init() {
     }
   });
 
-  gsap.utils.toArray('.ribbon').forEach((section, index) => {
-    const w = section.querySelector('.ribbon__text');
-    const [x, xEnd] = (index % 2) ? ['100%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-    gsap.fromTo(w, { x }, {
-      x: xEnd + 100,
-      scrollTrigger: {
-        trigger: section,
-        scrub: 0.5
-      }
-    });
+  // gsap.utils.toArray('.ribbon').forEach((section, index) => {
+  const section = document.querySelector(".ribbon")
+  const w = section.querySelector('.ribbon__text');
+  // const [x, xEnd] = ['100%', (w.scrollWidth - section.offsetWidth)]
+  gsap.fromTo(w, { x: "100%" }, {
+    x: 0,
+    scrollTrigger: {
+      trigger: section,
+      scrub: .5,
+      start: "center bottom"
+    }
   });
+  // });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".grid",
+      start: "top top",
+      end: () => innerHeight * 4,
+      scrub: true,
+      pin: ".grid__container",
+      anticipatePin: 1
+    }
+  })
+    .set(".grid__block:not(.centerBlock)", { autoAlpha: 0 })
+    .to(".grid__block:not(.centerBlock)", { duration: 0.1, autoAlpha: 1 }, 0.001)
+    .from(".grid__layer", {
+      scale: 3.3333,
+      ease: "none",
+    });
+
+  // const size = Math.max(innerWidth, innerHeight);
+  // gsap.set('.grid__block', { backgroundImage: i => `url(https://picsum.photos/${size}/${size}?random=${i})` });
+
+  const bigImg = new Image;
+  bigImg.addEventListener("load", function () {
+    gsap.to(".centerPiece .grid__block", { autoAlpha: 1, duration: 0.5 });
+  });
+
+  bigImg.src = `https://picsum.photos/${size}/${size}?random=50`;
 }
 
 
